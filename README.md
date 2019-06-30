@@ -2,7 +2,7 @@
 
 💳 Payment View library for Credit and Debit Card. 
 
-<p align="left"><img src="art/visa.svg"/> <img src="art/mastercard.svg"/> <img src="art/americanexpress.svg"/> <img src="art/jcb.svg"/> <img src="art/discover.svg"/> <img src="art/dinnersclub.svg"/> <img src="art/undefined.svg"/></p> 
+<p align="left"><img src="art/visa.svg" width="40" height="40"/>&nbsp;&nbsp;<img src="art/mastercard.svg"  width="40" height="40"/>&nbsp;&nbsp;<img src="art/americanexpress.svg"  width="40" height="40"/>&nbsp;&nbsp;<img src="art/jcb.svg"  width="40" height="40"/>&nbsp;&nbsp;<img src="art/discover.svg"  width="40" height="40"/>&nbsp;&nbsp;<img src="art/dinnersclub.svg" width="40" height="40"/>&nbsp;&nbsp;<img src="art/undefined.svg" width="40" height="40"/></p> 
 
 <br>
 
