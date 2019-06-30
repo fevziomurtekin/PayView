@@ -1,11 +1,11 @@
-<p align="center"><img src="Art/banner.png"></p>
+<p align="center"><img src="art/banner.png"></p>
 
 💳 Payment View library for Credit and Debit Card. 
 
 # Demo
 
 <p align="center">
-<img src="Art/record.gif" />
+<img src="art/record.gif" width="180"  height="320" />
 </p>
 
 # Setup
