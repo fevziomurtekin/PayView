@@ -5,7 +5,7 @@
 # Demo
 
 <p align="center">
-<img src="art/record.gif" width="270"  height="480" />
+<img src="art/record.gif" width="360"  height="640" />
 </p>
 
 # Setup
