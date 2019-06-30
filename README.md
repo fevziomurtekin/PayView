@@ -69,7 +69,7 @@ dependencies {
 
   | Attribute | Description |
 | --- | --- |
-| `cardBgColor` |The color in int of the title text color (R.color.textcolor => #ff33b5e5) | 
+| `cardBgColor` |The color in int of the title text color (#ff33b5e5) | 
 | `cardNameTextSize` | The size in sp of the search text size (by default 15sp) |
 | `cardNoTextSize` | The size in sp of the search text size (by default 14sp)|
 |`cardYearTextSize`|The size in sp of the search text size (by default 13sp) |
