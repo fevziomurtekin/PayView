@@ -1,8 +1,12 @@
-<p align="center"><img src="art/banner.png"></p>
+<p align="center"><img src="art/banner.png"/></p>
 
 💳 Payment View library for Credit and Debit Card. 
 
-[![](https://jitpack.io/v/fevziomurtekin/PayView.svg)](https://jitpack.io/#fevziomurtekin/PayView)
+<p align="left"><img src="art/visa.svg"/> <img src="art/mastercard.svg"/> <img src="art/americanexpress.svg"/> <img src="art/jcb.svg"/> <img src="art/discover.svg"/> <img src="art/dinnersclub.svg"/> <img src="art/undefined.svg"/></p> 
+
+<br>
+
+[![](https://jitpack.io/v/fevziomurtekin/PayView.svg)](https://jitpack.io/#fevziomurtekin/PayView) [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-PayView-green.svg?style=flat )]( https://android-arsenal.com/details/1/7724 )
 
 # Demo
 
@@ -69,7 +73,7 @@ dependencies {
 
   | Attribute | Description |
 | --- | --- |
-| `cardBgColor` |The color in int of the title text color (R.color.textcolor => #ff33b5e5) | 
+| `cardBgColor` |The color in int of the title text color (#ff33b5e5) | 
 | `cardNameTextSize` | The size in sp of the search text size (by default 15sp) |
 | `cardNoTextSize` | The size in sp of the search text size (by default 14sp)|
 |`cardYearTextSize`|The size in sp of the search text size (by default 13sp) |
