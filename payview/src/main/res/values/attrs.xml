@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Payview">
+        <attr name="cardBgColor" format="integer"/>
+        <attr name="cardNameTextSize" format="integer"/>
+        <attr name="cardNoTextSize" format="integer"/>
+        <attr name="cardYearTextSize" format="integer"/>
+        <attr name="cardMonthTextSize" format="integer"/>
+        <attr name="cardCvTextSize" format="integer"/>
+        <attr name="cardNumberHelperText" format="string"/>
+        <attr name="cardNameHelperText" format="string"/>
+    </declare-styleable>
+</resources>

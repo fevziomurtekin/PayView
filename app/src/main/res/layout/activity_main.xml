@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <com.fevziomurtekin.payview.Payview
+        android:id="@+id/payview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBgColor="@color/colorAccent"
+        app:cardNameHelperText="Enter to card name. Max 25 characters."
+        app:cardCvTextSize="14"
+        app:cardNoTextSize="14"
+        app:cardNumberHelperText="You must enter your 16-digit card number."
+        app:cardYearTextSize="13"
+        app:cardNameTextSize="15"
+        app:cardMonthTextSize="13"
+    />
+
+</RelativeLayout>

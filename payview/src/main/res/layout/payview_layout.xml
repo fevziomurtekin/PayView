@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_parent"
+        android:background="@android:color/white"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rl_form"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/holo_blue_light">
+
+            <RelativeLayout
+                    android:layout_width="360dp"
+                    android:layout_height="307.2dp"
+                    android:background="@drawable/backdebit"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/rl_back"
+                    android:alpha="0"
+            >
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_card_cv"
+                        android:layout_marginTop="120dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="15dp"
+                        android:background="@android:color/white"
+                        android:text="222"
+                        android:fontFamily="@font/credit_font"
+                        android:textColor="@android:color/black"
+                        android:padding="10dp"
+                />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:layout_width="360dp"
+                    android:layout_height="307.2dp"
+                    android:background="@drawable/frontdebit"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/rl_front"
+                    android:visibility="visible"
+            >
+                <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/iv_card_type"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="50dp"
+                        android:layout_marginRight="30dp"
+                        android:src="@drawable/ic_mastercard"
+                />
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lv_card_layout"
+                        android:orientation="horizontal"
+                        android:layout_above="@+id/iv_card_type"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginBottom="5dp"
+                >
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_card_one"
+                            android:layout_weight="1"
+                            android:lines="1"
+                            android:padding="7.5dp"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/credit_font"
+                            android:textColor="@android:color/black"
+                            android:text="1111"
+                            android:maxEms="4"
+                    />
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_card_two"
+                            android:layout_weight="1"
+                            android:lines="1"
+                            android:padding="7.5dp"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/credit_font"
+                            android:textColor="@android:color/black"
+                            android:text="1111"
+                            android:maxEms="4"
+
+                    />
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_card_three"
+                            android:layout_weight="1"
+                            android:lines="1"
+                            android:padding="7.5dp"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/credit_font"
+                            android:textColor="@android:color/black"
+                            android:text="1111"
+                            android:maxEms="4"
+
+                    />
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_card_four"
+                            android:layout_weight="1"
+                            android:lines="1"
+                            android:text="1111"
+                            android:textColor="@android:color/black"
+                            android:padding="7.5dp"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/credit_font"
+                            android:layout_marginLeft="1.5dp"
+                            android:maxEms="4"
+                    />
+                </LinearLayout>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:id="@+id/tv_card_owner"
+                        android:padding="10dp"
+                        android:layout_marginLeft="100dp"
+                        android:fontFamily="@font/credit_font"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginRight="20dp"
+                        android:textColor="@android:color/black"
+                        android:text="fevzi omur tekin"
+                        android:textSize="15sp"
+                        android:textAllCaps="true"
+                        android:layout_above="@+id/lv_card_layout"
+                />
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_alignTop="@+id/iv_card_type"
+                        android:layout_alignBottom="@+id/iv_card_type"
+                        android:layout_alignLeft="@+id/lv_card_layout"
+                >
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/tv_card_month"
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="center"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/credit_font"
+                            android:text="12"
+                            android:gravity="center"
+                    />
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/tv_bracket"
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="center"
+                            android:text="/"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/credit_font"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="2dp"
+                            android:gravity="center"
+                    />
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/tv_card_year"
+                            android:textColor="@android:color/black"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/credit_font"
+                            android:layout_gravity="center"
+                            android:text="20"
+                            android:gravity="center"
+                    />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    <androidx.core.widget.NestedScrollView
+                                           android:layout_width="match_parent"
+                                           android:layout_height="match_parent"
+                                           android:scrollbars="none"
+                                           android:layout_below="@id/rl_form"
+                                           xmlns:app="http://schemas.android.com/apk/res-auto">
+        <LinearLayout
+                android:id="@+id/ll_editviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+        >
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_card_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/cardname"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:counterMaxLength="25"
+                    app:helperTextTextAppearance="@style/HelperStyle"
+                    app:helperText="@string/cardname_helper_text"
+                    android:fontFamily="sans-serif"
+                    android:textColorHint="@android:color/black"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="10dp"
+                    app:counterEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tev_card_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_person"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:drawablePadding="10dp"
+                        android:maxLength="25"
+                        android:inputType="text"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_card_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:hint="@string/cardno"
+                    app:counterMaxLength="16"
+                    app:helperText="@string/cardno_helper_text"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"
+                    android:fontFamily="sans-serif"
+                    app:helperTextTextAppearance="@style/HelperStyle"
+                    app:passwordToggleDrawable="@drawable/ic_credit_card"
+                    app:counterEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tev_card_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_credit_card"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:drawablePadding="10dp"
+                        android:maxLength="16"
+                        android:inputType="numberDecimal"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:id="@+id/ll_card_date"
+                          android:orientation="horizontal"
+                          android:layout_marginBottom="10dp"
+            >
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_card_month"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/cardmonth"
+                        app:helperTextTextAppearance="@style/HelperStyle"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:counterMaxLength="2"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black"
+                        app:passwordToggleDrawable="@drawable/ic_credit_card"
+                        app:counterEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tev_card_month"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_date"
+                            android:textColorHint="@android:color/black"
+                            android:drawablePadding="10dp"
+                            android:fontFamily="sans-serif"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/black"
+                            android:maxLength="2"
+                            android:inputType="number"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="18sp"
+                        android:textColor="@android:color/black"
+                        android:text="/"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                />
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_card_year"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/cardyear"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:counterMaxLength="2"
+                        android:textColorHint="@android:color/black"
+                        android:textColor="@android:color/black"
+                        app:counterEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tev_card_year"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_date"
+                            android:drawablePadding="10dp"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@android:color/black"
+                            android:maxLength="2"
+                            android:inputType="number"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_card_cv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/cardcv"
+                    app:counterMaxLength="3"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"
+                    app:helperTextTextAppearance="@style/HelperStyle"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:passwordToggleDrawable="@drawable/ic_credit_card"
+                    app:counterEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tev_card_cv"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:maxLength="3"
+                        android:textColor="@android:color/black"
+                        android:drawableLeft="@drawable/ic_key"
+                        android:fontFamily="sans-serif"
+                        android:drawablePadding="10dp"
+                        android:textSize="14sp"
+                        android:inputType="numberPassword"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_pay"
+                    android:background="@android:color/holo_blue_dark"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/pay"
+            />
+
+        </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+        </RelativeLayout>
+

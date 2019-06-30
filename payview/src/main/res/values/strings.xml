@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">payview</string>
+    <string name="cardname">Card Name</string>
+    <string name="cardname_helper_text">Enter to card name. Max 25 characters.</string>
+    <string name="pay">Pay</string>
+    <string name="cardno">Card No</string>
+    <string name="cardno_helper_text">You must enter your 16-digit card number.</string>
+    <string name="day_hint">12</string>
+    <string name="cardmonth">Month</string>
+    <string name="cardyear">Year</string>
+    <string name="cardcv">Cv Code</string>
+</resources>
