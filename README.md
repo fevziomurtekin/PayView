@@ -2,6 +2,8 @@
 
 💳 Payment View library for Credit and Debit Card. 
 
+[![](https://jitpack.io/v/fevziomurtekin/PayView.svg)](https://jitpack.io/#fevziomurtekin/PayView)
+
 # Demo
 
 <p align="center">
