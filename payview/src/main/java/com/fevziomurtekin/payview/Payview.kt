@@ -16,12 +16,13 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.core.widget.NestedScrollView
 import com.fevziomurtekin.payview.data.CardType
 import com.fevziomurtekin.payview.data.PayModel
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
-class Payview : RelativeLayout, View.OnFocusChangeListener {
+class Payview : NestedScrollView, View.OnFocusChangeListener {
 
     /**
      * Data changed on listener
@@ -82,10 +83,10 @@ class Payview : RelativeLayout, View.OnFocusChangeListener {
 
     constructor(context: Context,attrs: AttributeSet?,defStyleAttr:Int) :super(context,attrs,defStyleAttr){ init(context,attrs,defStyleAttr,0)}
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+  /*  @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes) {
         init(context, attrs, defStyleAttr, defStyleRes)
-    }
+    }*/
 
 
     override fun onFocusChange(v: View?, hasFocus: Boolean) {

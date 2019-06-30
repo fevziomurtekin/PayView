@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rl_parent"
+        android:scrollbars="none"
         android:background="@android:color/white"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <RelativeLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/rl_form"
@@ -136,7 +142,7 @@
                         android:layout_marginBottom="20dp"
                         android:layout_marginRight="20dp"
                         android:textColor="@android:color/black"
-                        android:text="fevzi omur tekin"
+                        android:text="Name Surname"
                         android:textSize="15sp"
                         android:textAllCaps="true"
                         android:layout_above="@+id/lv_card_layout"
@@ -192,7 +198,7 @@
             </RelativeLayout>
 
         </RelativeLayout>
-    <androidx.core.widget.NestedScrollView
+            <androidx.core.widget.NestedScrollView
                                            android:layout_width="match_parent"
                                            android:layout_height="match_parent"
                                            android:scrollbars="none"
@@ -376,5 +382,7 @@
 
         </LinearLayout>
 </androidx.core.widget.NestedScrollView>
+
         </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
 

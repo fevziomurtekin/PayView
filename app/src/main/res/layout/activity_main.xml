@@ -9,7 +9,6 @@
         android:id="@+id/payview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardBgColor="@color/colorAccent"
         app:cardNameHelperText="Enter to card name. Max 25 characters."
         app:cardCvTextSize="14"
         app:cardNoTextSize="14"

@@ -12,22 +12,25 @@ import com.fevziomurtekin.payview.Payview
 import com.fevziomurtekin.payview.data.PayModel
 import kotlinx.android.synthetic.main.activity_main.*
 
-class ActivityMain : AppCompatActivity(), Payview.OnChangelistener {
+class ActivityMain : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        payview.setOnDataChangedListener(this)
+        payview.setOnDataChangedListener(object : Payview.OnChangelistener{
+            override fun onChangelistener(payModel: PayModel?) {
+                Log.d("payView", "data : ${payModel?.cardOwnerName}")
+
+            }
+
+        })
         payview.setPayOnclickListener(View.OnClickListener {
-            Log.d("parentView "," clicked.")
+            Log.d("payView "," clicked.")
 
         })
 
     }
 
-    override fun onChangelistener(payModel: PayModel?) {
-        Log.d("parentView", "data : ${payModel?.cardOwnerName}")
-    }
 
 }
