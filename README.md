@@ -84,7 +84,7 @@ dependencies {
 
 ## Features
 
-- [ ] Horizontal/vertical Animation.
+- [x] Horizontal/vertical Animation.
 - [ ] Card design programmatically will changed. 
 
 ## License

@@ -16,6 +16,7 @@
         app:cardYearTextSize="13"
         app:cardNameTextSize="15"
         app:cardMonthTextSize="13"
+        app:cardAnimationType="vertical"
     />
 
 </RelativeLayout>

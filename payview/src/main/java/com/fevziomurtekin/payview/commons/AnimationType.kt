@@ -1,6 +1,8 @@
 package com.fevziomurtekin.payview.commons
 
-enum class AnimationType {
-    HORIZONTAL,
-    VERTICAL
+annotation class AnimationType {
+    companion object {
+        val HORIZONTAL=0
+        val VERTICAL=1
+    }
 }

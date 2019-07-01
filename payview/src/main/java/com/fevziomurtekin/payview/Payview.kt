@@ -76,7 +76,7 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
 
     private var cardType : CardType = CardType.MASTERCARD
 
-
+    private var cardAnimationType:Int = AnimationType.HORIZONTAL
 
     constructor(context:Context) : super(context) { init(context,null,0,0) }
 
@@ -122,7 +122,7 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
                 cardYearTextSize=it.getInt(R.styleable.Payview_cardYearTextSize,13)
                 cardMonthTextSize=it.getInt(R.styleable.Payview_cardMonthTextSize,13)
                 cardCvTextSize=it.getInt(R.styleable.Payview_cardCvTextSize,14)
-                animationType = it.getInteger(R.styleable.Payview_cardAnimationType,AnimationType.HORIZONTAL)
+                cardAnimationType=it.getInt(R.styleable.Payview_cardAnimationType,AnimationType.HORIZONTAL)
                 initViews()
                 initData()
             }
@@ -360,11 +360,21 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
     private fun showAnimation(mood: Char){
         System.gc()
         if(mood == 'o' && mood != lastMood){
-            val set = AnimatorInflater.loadAnimator(this@Payview.context, R.animator.front_horizontal_in) as AnimatorSet
+            val set = AnimatorInflater.loadAnimator(this@Payview.context,
+                if(cardAnimationType == AnimationType.HORIZONTAL)
+                    R.animator.front_horizontal_in
+                else
+                    R.animator.front_vertical_in
+            ) as AnimatorSet
             set.apply {
                 setTarget(rl_front)
             }
-            val set1 = AnimatorInflater.loadAnimator(this@Payview.context, R.animator.front_horizontal_out) as AnimatorSet
+            val set1 = AnimatorInflater.loadAnimator(this@Payview.context,
+                if(cardAnimationType == AnimationType.HORIZONTAL)
+                    R.animator.front_horizontal_out
+                else
+                    R.animator.front_vertical_out
+            ) as AnimatorSet
             set1.apply {
                 setTarget(rl_back)
             }
@@ -374,11 +384,21 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
             animator.start()
 
         }else if (mood == 'i' && mood!=lastMood){
-            val set = AnimatorInflater.loadAnimator(this@Payview.context, R.animator.back_horizontal_in) as AnimatorSet
+            val set = AnimatorInflater.loadAnimator(this@Payview.context,
+                if(cardAnimationType == AnimationType.HORIZONTAL)
+                    R.animator.back_horizontal_in
+                else
+                    R.animator.back_vertical_in
+            ) as AnimatorSet
             set.apply {
                 setTarget(rl_front)
             }
-            val set1 = AnimatorInflater.loadAnimator(this@Payview.context, R.animator.back_horizontal_out) as AnimatorSet
+            val set1 = AnimatorInflater.loadAnimator(this@Payview.context,
+                if(cardAnimationType == AnimationType.HORIZONTAL)
+                    R.animator.back_horizontal_out
+                else
+                    R.animator.back_vertical_out
+            ) as AnimatorSet
             set1.apply {
                 setTarget(rl_back)
             }
