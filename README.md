@@ -39,7 +39,9 @@ dependencies {
         android:id="@+id/payview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardBgColor="@color/colorAccent"
+        app:cardBgColor="@android:color/holo_blue_light"
+        app:cardFgColor="@android:color/white"
+        app:cardTextColor="@color/black"
         app:cardNameHelperText="Enter to card name. Max 25 characters."
         app:cardCvTextSize="14"
         app:cardNoTextSize="14"
@@ -47,6 +49,7 @@ dependencies {
         app:cardYearTextSize="13"
         app:cardNameTextSize="15"
         app:cardMonthTextSize="13"
+        app:cardAnimationType="vertical"
     />
 ```
 
@@ -73,7 +76,10 @@ dependencies {
 
   | Attribute | Description |
 | --- | --- |
-| `cardBgColor` |The color in int of the title text color (#ff33b5e5) | 
+| `cardBgColor` | The color in int of the card background color (by default android.R.color.holo_blue_light) | 
+|cardFgColor| The color in int of the card foreground color (by default android.R.color.white)|
+|cardTextColor| The color in int of the card text color (by default android.R.color.black)|
+|cardAnimationType| Animation in AnimationType of the PayView (by default horizontal)|
 | `cardNameTextSize` | The size in sp of the search text size (by default 15sp) |
 | `cardNoTextSize` | The size in sp of the search text size (by default 14sp)|
 |`cardYearTextSize`|The size in sp of the search text size (by default 13sp) |
@@ -82,10 +88,10 @@ dependencies {
 |`cardNumberHelperText`| Default text, "You must enter your 16-digit card number. "|
 |`cardNameHelperText`| Default text "Enter to card name. You'll enter max 25 characters"|
 
-## Features
+## TODO for new Version
 
 - [x] Horizontal/vertical Animation.
-- [ ] Card design programmatically will changed. 
+- [x] Card design programmatically will changed. 
 
 ## License
 The Apache License 2.0 - see [`LICENSE`](LICENSE) for more details

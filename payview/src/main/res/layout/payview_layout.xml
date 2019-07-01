@@ -26,8 +26,18 @@
                     android:background="@drawable/backdebit"
                     android:layout_centerInParent="true"
                     android:id="@+id/rl_back"
-                    android:alpha="0"
-            >
+                    android:backgroundTint="@color/alternative_white_light"
+                    android:alpha="0">
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="65dp"
+                        android:id="@+id/view_black"
+                        android:layout_marginLeft="12.5dp"
+                        android:layout_marginRight="12.5dp"
+                        android:background="@android:color/black"
+                />
 
                 <TextView
                         android:layout_width="wrap_content"
@@ -51,7 +61,9 @@
                     android:background="@drawable/frontdebit"
                     android:layout_centerInParent="true"
                     android:id="@+id/rl_front"
+                    android:backgroundTint="@android:color/white"
                     android:visibility="visible"
+                    android:alpha="1"
             >
                 <ImageView
                         android:layout_width="40dp"
@@ -146,6 +158,17 @@
                         android:textSize="15sp"
                         android:textAllCaps="true"
                         android:layout_above="@+id/lv_card_layout"
+                />
+
+                <ImageView
+                        android:id="@+id/iv_chip"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignTop="@id/tv_card_owner"
+                        android:layout_alignBottom="@id/tv_card_owner"
+                        android:layout_marginLeft="35dp"
+                        android:background="@android:color/white"
+                        android:src="@drawable/chip"
                 />
 
                 <LinearLayout

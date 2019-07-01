@@ -2,6 +2,8 @@
 <resources>
     <declare-styleable name="Payview">
         <attr name="cardBgColor" format="integer"/>
+        <attr name="cardFgColor" format="integer"/>
+        <attr name="cardTextColor" format="integer"/>
         <attr name="cardNameTextSize" format="integer"/>
         <attr name="cardNoTextSize" format="integer"/>
         <attr name="cardYearTextSize" format="integer"/>

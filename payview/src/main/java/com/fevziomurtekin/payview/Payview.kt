@@ -2,7 +2,9 @@ package com.fevziomurtekin.payview
 
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
+import android.annotation.SuppressLint
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.text.Editable
 import android.text.TextWatcher
@@ -15,6 +17,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.annotation.IntegerRes
+import androidx.core.content.ContextCompat
 import androidx.core.widget.NestedScrollView
 import com.fevziomurtekin.payview.commons.AnimationType
 import com.fevziomurtekin.payview.commons.CardType
@@ -33,7 +36,9 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
 
 
     /** attributes of layout */
-    private var cardBackgroundColor:Int = Color.parseColor("#ff33b5e5")
+    private var cardBackgroundColor:Int = resources.getColor(android.R.color.holo_blue_light)
+    private var cardForegoundColor:Int = resources.getColor(android.R.color.white)
+    private var cardTextColor:Int = resources.getColor(android.R.color.black)
     private var cardNameHelperText : String = resources.getString(R.string.cardname_helper_text)
     private var cardNoHelperText : String = resources.getString(R.string.cardno_helper_text)
     private var cardNameTextSize : Int = 14
@@ -49,6 +54,8 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
     private lateinit var rl_front: RelativeLayout
     private lateinit var tv_card_cv: TextView
     private lateinit var iv_card_type: ImageView
+    private lateinit var view_black:View
+    private lateinit var iv_chip: ImageView
     private lateinit var tv_card_one: TextView
     private lateinit var tv_card_two: TextView
     private lateinit var tv_card_three: TextView
@@ -112,7 +119,9 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
 
         context.theme?.obtainStyledAttributes(attrs, R.styleable.Payview, defStyleAttr, defStyleRes).let {
             if(it!=null){
-                cardBackgroundColor=it.getInt(R.styleable.Payview_cardBgColor, Color.parseColor("#ff33b5e5"))
+                cardBackgroundColor=it.getInt(R.styleable.Payview_cardBgColor, resources.getColor(android.R.color.holo_blue_light))
+                cardForegoundColor = it.getInt(R.styleable.Payview_cardFgColor,resources.getColor(android.R.color.white))
+                cardTextColor = it.getInt(R.styleable.Payview_cardTextColor,resources.getColor(android.R.color.black))
                 cardNameHelperText=it.getString(R.styleable.Payview_cardNameHelperText).let { s-> s?.toString()
                     ?: cardNameHelperText }
                 cardNoHelperText=it.getString(R.styleable.Payview_cardNumberHelperText).let { s-> s?.toString()
@@ -141,12 +150,15 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
     /**
      * attributes init to components.
      * */
+    @SuppressLint("ResourceType")
     private fun initViews(){
         rl_form = this@Payview.findViewById(R.id.rl_form)
         rl_front = this@Payview.findViewById(R.id.rl_front)
         rl_back = this@Payview.findViewById(R.id.rl_back)
         tv_card_cv = this@Payview.findViewById(R.id.tv_card_cv)
         iv_card_type = this@Payview.findViewById(R.id.iv_card_type)
+        iv_chip = this@Payview.findViewById(R.id.iv_chip)
+        view_black = this@Payview.findViewById(R.id.view_black)
         tv_card_one = this@Payview.findViewById(R.id.tv_card_one)
         tv_card_two = this@Payview.findViewById(R.id.tv_card_two)
         tv_card_three = this@Payview.findViewById(R.id.tv_card_three)
@@ -167,6 +179,29 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
         btn_pay = this@Payview.findViewById(R.id.btn_pay)
 
         rl_form.setBackgroundColor(cardBackgroundColor)
+        rl_front.backgroundTintList = ColorStateList.valueOf(cardForegoundColor)
+        rl_back.backgroundTintList = ColorStateList.valueOf(cardForegoundColor)
+        iv_chip.backgroundTintList = ColorStateList.valueOf(cardForegoundColor)
+
+        if(cardForegoundColor == Color.WHITE)
+            tv_card_cv.setBackgroundColor(context.resources.getColor(R.color.alternative_white_light))
+
+        view_black.visibility = View.VISIBLE
+        if(cardForegoundColor == Color.BLACK)
+            view_black.setBackgroundColor(context.resources.getColor(android.R.color.white))
+        else
+            view_black.setBackgroundColor(context.resources.getColor(android.R.color.black))
+
+
+        tv_card_owner.setTextColor(cardTextColor)
+        tv_card_one.setTextColor(cardTextColor)
+        tv_card_two.setTextColor(cardTextColor)
+        tv_card_three.setTextColor(cardTextColor)
+        tv_card_four.setTextColor(cardTextColor)
+        tv_card_month.setTextColor(cardTextColor)
+        tv_card_year.setTextColor(cardTextColor)
+
+
         til_card_name.helperText=cardNameHelperText
         til_card_no.helperText=cardNoHelperText
         tev_card_name.textSize = cardNameTextSize.toFloat()
@@ -174,6 +209,7 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
         tev_card_year.textSize = cardYearTextSize.toFloat()
         tev_card_month.textSize = cardMonthTextSize.toFloat()
         tev_card_cv.textSize = cardCvTextSize.toFloat()
+
 
 
         tev_card_name.onFocusChangeListener = this
