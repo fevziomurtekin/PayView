@@ -1,12 +1,17 @@
-<p align="center"><img src="art/banner.png"/></p>
+[![](https://jitpack.io/v/fevziomurtekin/PayView.svg)](https://jitpack.io/#fevziomurtekin/PayView) [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-PayView-green.svg?style=flat )]( https://android-arsenal.com/details/1/7724 )
 
-💳 Payment View library for Credit and Debit Card. 
+<p align="center">
+<img src="art/banner.png"/>
+<br>
+Payment View library for Credit and Debit Card. 
+</p>
 
-<p align="left"><img src="art/visa.svg" width="55" height="55"/>&nbsp;&nbsp;<img src="art/mastercard.svg"  width="55" height="55"/>&nbsp;&nbsp;<img src="art/americanexpress.svg"  width="55" height="55"/>&nbsp;&nbsp;<img src="art/jcb.svg"  width="55" height="55"/>&nbsp;&nbsp;<img src="art/discover.svg"  width="55" height="55"/>&nbsp;&nbsp;<img src="art/dinnersclub.svg" width="55" height="55"/>&nbsp;&nbsp;<img src="art/undefined.svg" width="55" height="55"/></p> 
+💳 
+
+<p align="center"><img src="art/visa.svg" width="55" height="55"/>&nbsp;&nbsp;<img src="art/mastercard.svg"  width="55" height="55"/>&nbsp;&nbsp;<img src="art/americanexpress.svg"  width="55" height="55"/>&nbsp;&nbsp;<img src="art/jcb.svg"  width="55" height="55"/>&nbsp;&nbsp;<img src="art/discover.svg"  width="55" height="55"/>&nbsp;&nbsp;<img src="art/dinnersclub.svg" width="55" height="55"/>&nbsp;&nbsp;<img src="art/undefined.svg" width="55" height="55"/></p> 
 
 <br>
 
-[![](https://jitpack.io/v/fevziomurtekin/PayView.svg)](https://jitpack.io/#fevziomurtekin/PayView) [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-PayView-green.svg?style=flat )]( https://android-arsenal.com/details/1/7724 )
 
 # Demo
 
