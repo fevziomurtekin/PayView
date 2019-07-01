@@ -1,5 +1,7 @@
 package com.fevziomurtekin.payview.data
 
+import com.fevziomurtekin.payview.commons.CardType
+
 data class PayModel(
     var cardOwnerName:String="",
     var cardMonth:Int=0,

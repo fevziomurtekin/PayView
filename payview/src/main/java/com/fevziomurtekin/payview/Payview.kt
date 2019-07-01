@@ -4,7 +4,6 @@ import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
 import android.content.Context
 import android.graphics.Color
-import android.os.Build
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
@@ -15,9 +14,10 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.annotation.RequiresApi
+import androidx.annotation.IntegerRes
 import androidx.core.widget.NestedScrollView
-import com.fevziomurtekin.payview.data.CardType
+import com.fevziomurtekin.payview.commons.AnimationType
+import com.fevziomurtekin.payview.commons.CardType
 import com.fevziomurtekin.payview.data.PayModel
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -74,7 +74,8 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
 
     private var onChangeListener:OnChangelistener?=null
 
-    private var cardType :CardType = CardType.MASTERCARD
+    private var cardType : CardType = CardType.MASTERCARD
+
 
 
     constructor(context:Context) : super(context) { init(context,null,0,0) }
@@ -121,7 +122,7 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
                 cardYearTextSize=it.getInt(R.styleable.Payview_cardYearTextSize,13)
                 cardMonthTextSize=it.getInt(R.styleable.Payview_cardMonthTextSize,13)
                 cardCvTextSize=it.getInt(R.styleable.Payview_cardCvTextSize,14)
-
+                animationType = it.getInteger(R.styleable.Payview_cardAnimationType,AnimationType.HORIZONTAL)
                 initViews()
                 initData()
             }

@@ -82,6 +82,11 @@ dependencies {
 |`cardNumberHelperText`| Default text, "You must enter your 16-digit card number. "|
 |`cardNameHelperText`| Default text "Enter to card name. You'll enter max 25 characters"|
 
+## Features
+
+- [ ] Horizontal/vertical Animation.
+- [ ] Card design programmatically will changed. 
+
 ## License
 The Apache License 2.0 - see [`LICENSE`](LICENSE) for more details
 

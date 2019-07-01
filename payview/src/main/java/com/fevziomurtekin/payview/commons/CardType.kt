@@ -1,4 +1,4 @@
-package com.fevziomurtekin.payview.data
+package com.fevziomurtekin.payview.commons
 
 enum class CardType {
     VISA,
