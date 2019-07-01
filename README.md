@@ -3,10 +3,9 @@
 <p align="center">
 <img src="art/banner.png"/>
 <br>
-Payment View library for Credit and Debit Card. 
+💳 Payment View library for Credit and Debit Card. 
 </p>
 
-💳 
 
 <p align="center"><img src="art/visa.svg" width="55" height="55"/>&nbsp;&nbsp;<img src="art/mastercard.svg"  width="55" height="55"/>&nbsp;&nbsp;<img src="art/americanexpress.svg"  width="55" height="55"/>&nbsp;&nbsp;<img src="art/jcb.svg"  width="55" height="55"/>&nbsp;&nbsp;<img src="art/discover.svg"  width="55" height="55"/>&nbsp;&nbsp;<img src="art/dinnersclub.svg" width="55" height="55"/>&nbsp;&nbsp;<img src="art/undefined.svg" width="55" height="55"/></p> 
 
@@ -82,9 +81,9 @@ dependencies {
   | Attribute | Description |
 | --- | --- |
 | `cardBgColor` | The color in int of the card background color (by default android.R.color.holo_blue_light) | 
-|cardFgColor| The color in int of the card foreground color (by default android.R.color.white)|
-|cardTextColor| The color in int of the card text color (by default android.R.color.black)|
-|cardAnimationType| Animation in AnimationType of the PayView (by default horizontal)|
+| `cardFgColor` | The color in int of the card foreground color (by default android.R.color.white)|
+| `cardTextColor` | The color in int of the card text color (by default android.R.color.black)|
+| `cardAnimationType` | Animation in AnimationType of the PayView (by default horizontal)|
 | `cardNameTextSize` | The size in sp of the search text size (by default 15sp) |
 | `cardNoTextSize` | The size in sp of the search text size (by default 14sp)|
 |`cardYearTextSize`|The size in sp of the search text size (by default 13sp) |
