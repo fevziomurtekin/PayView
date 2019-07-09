@@ -77,6 +77,8 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
 
     private var lastMood:Char = 'i'
 
+    private var isRemoveText = false
+
     private var payModel:PayModel?=null
 
     private var onChangeListener:OnChangelistener?=null
@@ -236,42 +238,52 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
             override fun afterTextChanged(s: Editable?) {
                     Log.d("PayView"," length : ${s.toString().length}")
                     when (s.toString().length) {
-                        in 0..4 -> {
+                        in 0..3 -> {
                             tv_card_one.text = s.toString()
                             tv_card_two.text = ""
-                            tv_card_three.text =""
+                            tv_card_three.text = ""
                             tv_card_four.text = ""
                         }
                         in 5..8 -> {
-                            Log.d("PayView","1")
+                            Log.d("PayView", "1")
                             tv_card_one.text = s.toString().substring(0, 4)
-                            tv_card_two.text = s.toString().substring(4, s.toString().length)
-                            tv_card_three.text =""
+                            tv_card_two.text = s.toString().substring(5, s.toString().length)
+                            tv_card_three.text = ""
                             tv_card_four.text = ""
 
                         }
-                        in 9..12 -> {
-                            Log.d("PayView","2")
+                        in 10..13 -> {
+                            Log.d("PayView", "2")
                             tv_card_one.text = s.toString().substring(0, 4)
-                            tv_card_two.text = s.toString().substring(4, 8)
-                            tv_card_three.text = s.toString().substring(8, s.toString().length)
+                            tv_card_two.text = s.toString().substring(5, 9)
+                            tv_card_three.text = s.toString().substring(10, s.toString().length)
                             tv_card_four.text = ""
                         }
-                        else -> {
-                            Log.d("PayView","3")
+                        in 15..19 -> {
+                            Log.d("PayView", "3")
                             tv_card_one.text = s.toString().substring(0, 4)
-                            tv_card_two.text = s.toString().substring(4, 8)
-                            tv_card_three.text = s.toString().substring(8, 12)
-                            tv_card_four.text = s.toString().substring(12, s.toString().length)
+                            tv_card_two.text = s.toString().substring(5, 9)
+                            tv_card_three.text = s.toString().substring(10, 14)
+                            tv_card_four.text = s.toString().substring(14, s.toString().length)
+                        }
+                        4,9,14-> {
+                            if(!isRemoveText)
+                                s?.insert(s.toString().length," ")
+                            else
+                                s?.delete(s.toString().length-1,s.toString().length)
                         }
                     }
                     initData()
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                Log.d("PayView", "start: $start count: $count after: $after s:${s?.length}")
+                isRemoveText = start < s!!.length
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+
             }
 
         })

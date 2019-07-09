@@ -269,7 +269,7 @@
                     android:layout_height="wrap_content"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:hint="@string/cardno"
-                    app:counterMaxLength="16"
+                    app:counterMaxLength="19"
                     app:helperText="@string/cardno_helper_text"
                     android:layout_marginBottom="10dp"
                     android:textColor="@android:color/black"
@@ -287,8 +287,8 @@
                         android:textSize="14sp"
                         android:textColor="@android:color/black"
                         android:drawablePadding="10dp"
-                        android:maxLength="16"
-                        android:inputType="numberDecimal"/>
+                        android:maxLength="19"
+                        android:inputType="phone"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
