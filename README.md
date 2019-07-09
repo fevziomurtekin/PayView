@@ -1,12 +1,11 @@
-[![](https://jitpack.io/v/fevziomurtekin/PayView.svg)](https://jitpack.io/#fevziomurtekin/PayView) [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-PayView-green.svg?style=flat )]( https://android-arsenal.com/details/1/7724 )
+[![](https://jitpack.io/v/fevziomurtekin/PayView.svg)](https://jitpack.io/#fevziomurtekin/PayView) [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-PayView-green.svg?style=flat )]( https://android-arsenal.com/details/1/7724 )![Twitter Follow](https://img.shields.io/twitter/follow/fevziomurtekin.svg?label=fevziomurtekin&style=social)
 
 <p align="center">
 <img src="art/banner.png"/>
 <br>
-Payment View library for Credit and Debit Card. 
+💳 Payment View library for Credit and Debit Card. 
 </p>
 
-💳 
 
 <p align="center"><img src="art/visa.svg" width="55" height="55"/>&nbsp;&nbsp;<img src="art/mastercard.svg"  width="55" height="55"/>&nbsp;&nbsp;<img src="art/americanexpress.svg"  width="55" height="55"/>&nbsp;&nbsp;<img src="art/jcb.svg"  width="55" height="55"/>&nbsp;&nbsp;<img src="art/discover.svg"  width="55" height="55"/>&nbsp;&nbsp;<img src="art/dinnersclub.svg" width="55" height="55"/>&nbsp;&nbsp;<img src="art/undefined.svg" width="55" height="55"/></p> 
 
@@ -32,8 +31,8 @@ allprojects {
   .....
 
 dependencies {
-      implementation 'com.github.fevziomurtekin:PayView:1.0.0'
-	  }
+      implementation 'com.github.fevziomurtekin:PayView:1.0.1'
+  }
 }
 ```
 
@@ -82,9 +81,9 @@ dependencies {
   | Attribute | Description |
 | --- | --- |
 | `cardBgColor` | The color in int of the card background color (by default android.R.color.holo_blue_light) | 
-|cardFgColor| The color in int of the card foreground color (by default android.R.color.white)|
-|cardTextColor| The color in int of the card text color (by default android.R.color.black)|
-|cardAnimationType| Animation in AnimationType of the PayView (by default horizontal)|
+| `cardFgColor` | The color in int of the card foreground color (by default android.R.color.white)|
+| `cardTextColor` | The color in int of the card text color (by default android.R.color.black)|
+| `cardAnimationType` | Animation in AnimationType of the PayView (by default horizontal)|
 | `cardNameTextSize` | The size in sp of the search text size (by default 15sp) |
 | `cardNoTextSize` | The size in sp of the search text size (by default 14sp)|
 |`cardYearTextSize`|The size in sp of the search text size (by default 13sp) |
@@ -93,10 +92,7 @@ dependencies {
 |`cardNumberHelperText`| Default text, "You must enter your 16-digit card number. "|
 |`cardNameHelperText`| Default text "Enter to card name. You'll enter max 25 characters"|
 
-## TODO for new Version
 
-- [x] Horizontal/vertical Animation.
-- [x] Card design programmatically will changed. 
 
 ## License
 The Apache License 2.0 - see [`LICENSE`](LICENSE) for more details
