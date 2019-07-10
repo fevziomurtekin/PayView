@@ -11,11 +11,9 @@ import android.text.TextWatcher
 import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.RelativeLayout
-import android.widget.TextView
+import android.widget.*
 import androidx.annotation.IntegerRes
 import androidx.core.content.ContextCompat
 import androidx.core.widget.NestedScrollView
@@ -24,6 +22,8 @@ import com.fevziomurtekin.payview.commons.CardType
 import com.fevziomurtekin.payview.data.PayModel
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.android.synthetic.main.payview_layout.view.*
+import java.util.*
 
 class Payview : NestedScrollView, View.OnFocusChangeListener {
 
@@ -31,7 +31,7 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
      * Data changed on listener
      * */
     interface OnChangelistener{
-        fun onChangelistener(payModel: PayModel?)
+        fun onChangelistener(payModel: PayModel?,isFillAllComponents:Boolean)
     }
 
 
@@ -41,6 +41,10 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
     private var cardTextColor:Int = resources.getColor(android.R.color.black)
     private var cardNameHelperText : String = resources.getString(R.string.cardname_helper_text)
     private var cardNoHelperText : String = resources.getString(R.string.cardno_helper_text)
+    private var cardYearErrorText:String = resources.getString(R.string.cardyear_error_text)
+    private var cardMonthErrorText:String= resources.getString(R.string.cardmonth_error_text)
+    private var cardCvErrorText:String= resources.getString(R.string.cardmonth_error_text)
+    private var cardExpiredError:String= resources.getString(R.string.cardexpired_error_text)
     private var cardNameTextSize : Int = 14
     private var cardNoTextSize : Int = 14
     private var cardYearTextSize : Int = 13
@@ -75,16 +79,12 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
     private lateinit var tev_card_cv:TextInputEditText
     private lateinit var btn_pay:Button
 
+    var isFillAllComponents=false
     private var lastMood:Char = 'i'
-
     private var isRemoveText = false
-
     private var payModel:PayModel?=null
-
     private var onChangeListener:OnChangelistener?=null
-
     private var cardType : CardType = CardType.MASTERCARD
-
     private var cardAnimationType:Int = AnimationType.HORIZONTAL
 
     constructor(context:Context) : super(context) { init(context,null,0,0) }
@@ -128,6 +128,14 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
                     ?: cardNameHelperText }
                 cardNoHelperText=it.getString(R.styleable.Payview_cardNumberHelperText).let { s-> s?.toString()
                     ?: cardNoHelperText }
+                cardMonthErrorText=it.getString(R.styleable.Payview_cardMonthErrorText).let { s-> s?.toString()
+                        ?: cardMonthErrorText }
+                cardYearErrorText=it.getString(R.styleable.Payview_cardYearErrorText).let { s-> s?.toString()
+                        ?: cardYearErrorText }
+                cardCvErrorText=it.getString(R.styleable.Payview_cardCvErrorText).let { s-> s?.toString()
+                        ?: cardCvErrorText }
+                cardExpiredError=it.getString(R.styleable.Payview_cardExpiredErrorText).let { s-> s?.toString()
+                        ?: cardExpiredError }
                 cardNameTextSize=it.getInt(R.styleable.Payview_cardNameTextSize,14)
                 cardNoTextSize=it.getInt(R.styleable.Payview_cardNoTextSize,14)
                 cardYearTextSize=it.getInt(R.styleable.Payview_cardYearTextSize,13)
@@ -152,7 +160,7 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
     /**
      * attributes init to components.
      * */
-    @SuppressLint("ResourceType")
+    @SuppressLint("ResourceType", "ClickableViewAccessibility")
     private fun initViews(){
         rl_form = this@Payview.findViewById(R.id.rl_form)
         rl_front = this@Payview.findViewById(R.id.rl_front)
@@ -211,8 +219,6 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
         tev_card_year.textSize = cardYearTextSize.toFloat()
         tev_card_month.textSize = cardMonthTextSize.toFloat()
         tev_card_cv.textSize = cardCvTextSize.toFloat()
-
-
 
         tev_card_name.onFocusChangeListener = this
         tev_card_no.onFocusChangeListener = this
@@ -277,7 +283,7 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                Log.d("PayView", "start: $start count: $count after: $after s:${s?.length}")
+                //Log.d("PayView", "start: $start count: $count after: $after s:${s?.length}")
                 isRemoveText = start < s!!.length
             }
 
@@ -291,6 +297,8 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
         tev_card_year.addTextChangedListener(object :TextWatcher{
             override fun afterTextChanged(s: Editable?) {
                 tv_card_year.text = s.toString()
+                tev_card_month.error = null
+                tev_card_year.error = null
                 initData()
             }
 
@@ -304,6 +312,8 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
         tev_card_month.addTextChangedListener(object :TextWatcher{
             override fun afterTextChanged(s: Editable?) {
                 tv_card_month.text = s.toString()
+                tev_card_month.error = null
+                tev_card_year.error = null
                 initData()
             }
 
@@ -328,6 +338,13 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
             }
         })
 
+
+        btn_pay.setOnTouchListener(object : OnTouchListener{
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                isFillAllComponents=checkAllFormFields()
+                return false
+            }
+        })
     }
 
     /**
@@ -336,17 +353,22 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
     private fun initData(){
         payModel = PayModel(
             tv_card_owner.text.toString(),
-            tv_card_year.text.toString().toInt(),
-            tv_card_month.text.toString().toInt(),
+            tv_card_year.text.toString().let {
+             if(it == "") 0 else it.toInt()
+            },
+            tv_card_month.text.toString().let {
+                if(it == "") 0 else it.toInt()
+            },
             "${tv_card_one.text}${tv_card_two.text}${tv_card_three.text}${tv_card_four.text}",
             tv_card_cv.text.toString()
         )
-        if(!payModel?.cardNo.isNullOrEmpty())
+        if(!payModel?.cardNo.isNullOrEmpty()) {
+            payModel?.cardNo?.replace(" ", "")
             checkCardType(payModel?.cardNo)
-        else
+        }else
             checkCardType("123")
 
-        this@Payview.onChangeListener?.onChangelistener(payModel)
+        this@Payview.onChangeListener?.onChangelistener(payModel,isFillAllComponents)
     }
 
     /**
@@ -457,6 +479,63 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
         }
 
         lastMood = mood
+    }
+
+
+    /**
+     * Cheking all form components.
+     * */
+    private fun checkAllFormFields():Boolean{
+        Log.d("PayView","card no: ${tev_card_no.text?.toString()?.replace(" ","")}")
+        this@Payview.apply {
+            if(tev_card_name.text.toString().isNotEmpty()
+                    && tev_card_cv.text.toString().length==3
+                    && tev_card_month.text.toString().length==2
+                    && tev_card_year.text.toString().length==2
+                    && tev_card_no.text?.toString()?.replace(" ","")?.length==16){
+
+                /** card month/card year compare to now date.*/
+                val nowMonth = Calendar.getInstance().get(Calendar.MONTH)
+                val nowYear = Calendar.getInstance().get(Calendar.YEAR).toString().substring(2,4).toInt()
+                return if(nowYear>tev_card_year.text.toString().toInt()
+                        || (nowYear==tev_card_year.text.toString().toInt()
+                                && nowMonth>=tev_card_month.text.toString().toInt())){
+                    tev_card_year.error = cardExpiredError
+                    tev_card_month.error = cardExpiredError
+                    false
+                }else true
+            }
+            else{
+                if(tev_card_name.text.isNullOrEmpty())
+                    tev_card_name.error = cardNameHelperText
+                if(tev_card_no.text?.toString()?.replace(" ","")?.length!=16)
+                    tev_card_no.error = cardNoHelperText
+                if(tev_card_cv.text.isNullOrEmpty()
+                        || tev_card_cv.text.toString().length!=3)
+                    tev_card_cv.error = cardCvErrorText
+
+
+                if(tev_card_year.text.isNullOrEmpty()
+                        || tev_card_year.text.toString().length!=2
+                        || tev_card_year.text.toString().toInt()>99)
+                    tev_card_year.error = cardYearErrorText
+                if(tev_card_month.text.isNullOrEmpty()
+                        || tev_card_month.text.toString().length!=2
+                        || tev_card_month.text.toString().toInt()<12)
+                    tev_card_month.error = cardMonthErrorText
+
+                /** card month/card year compare to now date.*/
+                val nowMonth = Calendar.getInstance().get(Calendar.MONTH)
+                val nowYear = Calendar.getInstance().get(Calendar.YEAR).toString().substring(2,4).toInt()
+                if(nowYear>tev_card_year.text.toString().toInt()
+                        || (nowYear==tev_card_year.text.toString().toInt()
+                                && nowMonth>=tev_card_month.text.toString().toInt())){
+                    tev_card_year.error = cardExpiredError
+                    tev_card_month.error = cardExpiredError
+                }
+                return false
+            }
+        }
     }
 
 }

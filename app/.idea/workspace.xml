@@ -14,10 +14,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8841b68e-f496-4ac6-bcf3-1c50ea5cf700" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fevziomurtekin/example/ActivityMain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fevziomurtekin/example/ActivityMain.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../art/record.gif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../payview/src/main/java/com/fevziomurtekin/payview/Payview.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../payview/src/main/java/com/fevziomurtekin/payview/Payview.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../payview/src/main/java/com/fevziomurtekin/payview/data/PayModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../payview/src/main/java/com/fevziomurtekin/payview/data/PayModel.kt" afterDir="false" />
@@ -45,7 +42,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
@@ -56,21 +53,38 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../payview/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-          <provider editor-type-id="android-manifest" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../payview/src/main/res/values/strings.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fevziomurtekin/example/ActivityMain.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="14" column="112" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="14" selection-end-column="112" />
+            <state relative-caret-position="182">
+              <caret line="23" column="76" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="23" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="90">
+                <caret line="92" column="78" lean-forward="true" selection-start-line="92" selection-start-column="78" selection-end-line="92" selection-end-column="78" />
+                <folding>
+                  <element signature="e#66#72#0" expanded="true" />
+                  <element signature="e#72#78#0" expanded="true" />
+                  <element signature="e#133#139#0" expanded="true" />
+                  <element signature="e#139#145#0" expanded="true" />
+                  <element signature="e#205#211#0" expanded="true" />
+                  <element signature="e#211#217#0" expanded="true" />
+                  <element signature="e#265#271#0" expanded="true" />
+                  <element signature="e#271#277#0" expanded="true" />
+                  <element signature="e#330#336#0" expanded="true" />
+                  <element signature="e#336#342#0" expanded="true" />
+                  <element signature="e#397#403#0" expanded="true" />
+                  <element signature="e#403#409#0" expanded="true" />
+                </folding>
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
             </state>
           </provider>
         </entry>
@@ -102,10 +116,11 @@
         <option value="$PROJECT_DIR$/../payview/src/main/java/com/fevziomurtekin/payview/data/PayModel.kt" />
         <option value="$PROJECT_DIR$/../payview/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/../payview/src/main/res/layout/payview_layout.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fevziomurtekin/example/ActivityMain.kt" />
         <option value="$PROJECT_DIR$/../payview/src/main/res/values/attrs.xml" />
         <option value="$PROJECT_DIR$/../payview/src/main/java/com/fevziomurtekin/payview/Payview.kt" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fevziomurtekin/example/ActivityMain.kt" />
+        <option value="$PROJECT_DIR$/../README.md" />
       </list>
     </option>
   </component>
@@ -355,7 +370,7 @@
       <window_info anchor="bottom" id="Logcat" order="1" weight="0.32649842" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32911393" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32911393" />
-      <window_info anchor="bottom" id="Terminal" order="4" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="4" visible="true" weight="0.32911393" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32911393" />
@@ -366,7 +381,7 @@
       <window_info anchor="right" id="Gradle" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info active="true" anchor="right" id="Preview" order="5" visible="true" weight="0.32954547" />
+      <window_info anchor="right" id="Preview" order="5" weight="0.32954547" />
     </layout>
     <layout-to-restore>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
@@ -477,13 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fevziomurtekin/example/ActivityMain.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="30" column="99" selection-start-line="30" selection-start-column="99" selection-end-line="30" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -503,6 +511,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
           <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="26" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../settings.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fevziomurtekin/example/ActivityMain.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="23" column="76" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="23" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="90">
+            <caret line="92" column="78" lean-forward="true" selection-start-line="92" selection-start-column="78" selection-end-line="92" selection-end-column="78" />
+            <folding>
+              <element signature="e#66#72#0" expanded="true" />
+              <element signature="e#72#78#0" expanded="true" />
+              <element signature="e#133#139#0" expanded="true" />
+              <element signature="e#139#145#0" expanded="true" />
+              <element signature="e#205#211#0" expanded="true" />
+              <element signature="e#211#217#0" expanded="true" />
+              <element signature="e#265#271#0" expanded="true" />
+              <element signature="e#271#277#0" expanded="true" />
+              <element signature="e#330#336#0" expanded="true" />
+              <element signature="e#336#342#0" expanded="true" />
+              <element signature="e#397#403#0" expanded="true" />
+              <element signature="e#403#409#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
         </state>
       </provider>
     </entry>

@@ -15,7 +15,7 @@
 # Demo
 
 <p align="center">
-<img src="art/record.gif" width="360"  height="640" />
+<img src="art/newrecord.gif" width="360"  height="640" />
 </p>
 
 # Setup
@@ -31,7 +31,7 @@ allprojects {
   .....
 
 dependencies {
-      implementation 'com.github.fevziomurtekin:PayView:1.0.1'
+      implementation 'com.github.fevziomurtekin:PayView:1.0.2'
   }
 }
 ```
@@ -54,6 +54,10 @@ dependencies {
         app:cardNameTextSize="15"
         app:cardMonthTextSize="13"
         app:cardAnimationType="vertical"
+        app:cardCvErrorText="You must enter 3-digit characters"
+        app:cardMonthErrorText="You must enter 2-digit characters and you'll enter to number the most digit-value is '12'"
+        app:cardYearErrorText="You must enter 2-digit characters and you'll enter to number the most digit-value is '99'"
+        app:cardExpiredErrorText="Your card has expired. Please enter the usage date correctly."
     />
 ```
 
@@ -62,14 +66,15 @@ dependencies {
 ```kotlin
    payview.setOnDataChangedListener(object : Payview.OnChangelistener{
             override fun onChangelistener(payModel: PayModel?) {
-                Log.d("payView", "data : ${payModel?.cardOwnerName}")
+                Log.d("PayView", "data : ${payModel?.cardOwnerName} \n " +
+                        "is Fill all form component : $isFillAllComponents")
 
             }
 
         })
         
     payview.setPayOnclickListener(View.OnClickListener {
-        Log.d("payView "," clicked.")
+        Log.d("PayView "," clicked. iss Fill all form Component : ${payview.isFillAllComponents}")
 
     })
       
@@ -78,7 +83,7 @@ dependencies {
 
  # Attributes
 
-  | Attribute | Description |
+| Attribute | Description |
 | --- | --- |
 | `cardBgColor` | The color in int of the card background color (by default android.R.color.holo_blue_light) | 
 | `cardFgColor` | The color in int of the card foreground color (by default android.R.color.white)|
@@ -91,7 +96,10 @@ dependencies {
 | `cardCvTextSize`|The size in sp of the result text size (by default 14sp) |
 |`cardNumberHelperText`| Default text, "You must enter your 16-digit card number. "|
 |`cardNameHelperText`| Default text "Enter to card name. You'll enter max 25 characters"|
-
+|`cardCvErrorText`| Default text "You must enter 3-digit characters"|
+|`cardMonthErrorText`| Default text ""You must enter 2-digit characters and you'll enter to number the most digit-value is '12'"|
+|`cardYearErrorText`| Default text "You must enter 2-digit characters and you'll enter to number the most digit-value is '99'"|
+|`cardExpiredErrorText`| Default text "Your card has expired. Please enter the usage date correctly."|
 
 
 ## License

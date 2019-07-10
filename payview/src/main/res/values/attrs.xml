@@ -11,6 +11,10 @@
         <attr name="cardCvTextSize" format="integer"/>
         <attr name="cardNumberHelperText" format="string"/>
         <attr name="cardNameHelperText" format="string"/>
+        <attr name="cardYearErrorText" format="string"/>
+        <attr name="cardMonthErrorText" format="string"/>
+        <attr name="cardCvErrorText" format="string"/>
+        <attr name="cardExpiredErrorText" format="string"/>
         <attr name="cardAnimationType" format="enum">
             <enum name="horizontal" value="0" />
             <enum name="vertical" value="1" />
