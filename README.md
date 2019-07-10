@@ -83,21 +83,21 @@ dependencies {
 
  # Attributes
 
-| Attribute | Description |
-| --- | --- |
-| `cardBgColor` | The color in int of the card background color (by default android.R.color.holo_blue_light) | 
-| `cardFgColor` | The color in int of the card foreground color (by default android.R.color.white)|
-| `cardTextColor` | The color in int of the card text color (by default android.R.color.black)|
-| `cardAnimationType` | Animation in AnimationType of the PayView (by default horizontal)|
-| `cardNameTextSize` | The size in sp of the search text size (by default 15sp) |
-| `cardNoTextSize` | The size in sp of the search text size (by default 14sp)|
+|Attribute|Description|
+|---|---|
+|`cardBgColor`|The color in int of the card background color (by default android.R.color.holo_blue_light)| 
+|`cardFgColor`|The color in int of the card foreground color (by default android.R.color.white)|
+|`cardTextColor`|The color in int of the card text color (by default android.R.color.black)|
+|`cardAnimationType`|Animation in AnimationType of the PayView (by default horizontal)|
+|`cardNameTextSize`|The size in sp of the search text size (by default 15sp) |
+|`cardNoTextSize`|The size in sp of the search text size (by default 14sp)|
 |`cardYearTextSize`|The size in sp of the search text size (by default 13sp) |
-| `cardMonthTextSize` |The size in sp of the search text size (by default 13sp) |
-| `cardCvTextSize`|The size in sp of the result text size (by default 14sp) |
-|`cardNumberHelperText`| Default text, "You must enter your 16-digit card number. "|
-|`cardNameHelperText`| Default text "Enter to card name. You'll enter max 25 characters"|
-|`cardCvErrorText`| Default text "You must enter 3-digit characters"|
-|`cardMonthErrorText`| Default text ""You must enter 2-digit characters and you'll enter to number the most digit-value is '12'"|
+|`cardMonthTextSize`|The size in sp of the search text size (by default 13sp) |
+|`cardCvTextSize`|The size in sp of the result text size (by default 14sp) |
+|`cardNumberHelperText`|Default text, "You must enter your 16-digit card number. "|
+|`cardNameHelperText`|Default text "Enter to card name. You'll enter max 25 characters"|
+|`cardCvErrorText`|Default text "You must enter 3-digit characters"|
+|`cardMonthErrorText`|Default text ""You must enter 2-digit characters and you'll enter to number the most digit-value is '12'"|
 |`cardYearErrorText`| Default text "You must enter 2-digit characters and you'll enter to number the most digit-value is '99'"|
 |`cardExpiredErrorText`| Default text "Your card has expired. Please enter the usage date correctly."|
 
