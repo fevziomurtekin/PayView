@@ -19,15 +19,16 @@ class ActivityMain : AppCompatActivity(){
         setContentView(R.layout.activity_main)
 
         payview.setOnDataChangedListener(object : Payview.OnChangelistener{
-            override fun onChangelistener(payModel: PayModel?) {
-                Log.d("payView", "data : ${payModel?.cardOwnerName}")
+            override fun onChangelistener(payModel: PayModel?,isFillAllComponents:Boolean) {
+                Log.d("PayView", "data : ${payModel?.cardOwnerName} \n " +
+                        "is Fill all form component : $isFillAllComponents")
 
             }
 
         })
-        payview.setPayOnclickListener(View.OnClickListener {
-            Log.d("payView "," clicked.")
 
+        payview.setPayOnclickListener(View.OnClickListener {
+            Log.d("PayView "," clicked. iss Fill all form Component : ${payview.isFillAllComponents}")
         })
 
     }

@@ -20,6 +20,11 @@
         app:cardNameTextSize="15"
         app:cardMonthTextSize="13"
         app:cardAnimationType="vertical"
+        app:cardCvErrorText="You must enter 3-digit characters"
+        app:cardMonthErrorText="You must enter 2-digit characters and you'll enter to number the most digit-value is '12'"
+        app:cardYearErrorText="You must enter 2-digit characters and you'll enter to number the most digit-value is '99'"
+        app:cardExpiredErrorText="Your card has expired. Please enter the usage date correctly."
     />
+
 
 </RelativeLayout>
