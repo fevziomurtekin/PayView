@@ -382,22 +382,24 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
     private fun checkCardType(cardNo: String?){
         when(cardNo?.substring(0,1).toString().toInt()){
             3->{
-                when(cardNo?.substring(0,2)?.toInt()){
-                    in 30..38->{
-                        cardType = CardType.DINNERSCLUB
-                        iv_card_type.setImageResource(R.drawable.ic_dinners)
-                    }
-                    35->{
-                        cardType = CardType.JCB
-                        iv_card_type.setImageResource(R.drawable.ic_jcb)
-                    }
-                    37->{
-                        cardType = CardType.AMERICANEXPRESS
-                        iv_card_type.setImageResource(R.drawable.ic_american_express)
-                    }
-                    else->{
-                        cardType = CardType.UNDEFINED
-                        iv_card_type.setImageResource(R.drawable.ic_warning)
+                if(cardNo?.length!! > 2) {
+                    when (cardNo?.substring(0, 2)?.toInt()) {
+                        in 30..38 -> {
+                            cardType = CardType.DINNERSCLUB
+                            iv_card_type.setImageResource(R.drawable.ic_dinners)
+                        }
+                        35 -> {
+                            cardType = CardType.JCB
+                            iv_card_type.setImageResource(R.drawable.ic_jcb)
+                        }
+                        37 -> {
+                            cardType = CardType.AMERICANEXPRESS
+                            iv_card_type.setImageResource(R.drawable.ic_american_express)
+                        }
+                        else -> {
+                            cardType = CardType.UNDEFINED
+                            iv_card_type.setImageResource(R.drawable.ic_warning)
+                        }
                     }
                 }
             }
