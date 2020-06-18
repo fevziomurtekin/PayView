@@ -32,7 +32,7 @@ allprojects {
   .....
 
 dependencies {
-      implementation 'com.github.fevziomurtekin:PayView:1.0.2'
+      implementation 'com.github.fevziomurtekin:PayView:1.0.3'
   }
 }
 ```
