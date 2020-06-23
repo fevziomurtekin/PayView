@@ -50,6 +50,12 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
     private var cardYearTextSize : Int = 13
     private var cardMonthTextSize : Int = 13
     private var cardCvTextSize : Int = 14
+    private var cardBtnPayText : String = resources.getString(R.string.pay)
+    private var cardNameHintText : String = resources.getString(R.string.cardname)
+    private var cardNoHintText : String = resources.getString(R.string.cardno)
+    private var cardMonthHintText : String = resources.getString(R.string.cardmonth)
+    private var cardYearHintText : String = resources.getString(R.string.cardyear)
+    private var cardCvHintText : String = resources.getString(R.string.cardcv)
 
 
     /** Views on layout.*/
@@ -141,6 +147,18 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
                 cardYearTextSize=it.getInt(R.styleable.Payview_cardYearTextSize,13)
                 cardMonthTextSize=it.getInt(R.styleable.Payview_cardMonthTextSize,13)
                 cardCvTextSize=it.getInt(R.styleable.Payview_cardCvTextSize,14)
+                cardBtnPayText=it.getString(R.styleable.Payview_cardBtnPayText).let { s-> s?.toString()
+                    ?: cardBtnPayText }
+                cardNameHintText=it.getString(R.styleable.Payview_cardNameHintText).let { s-> s?.toString()
+                    ?: cardNameHintText }
+                cardNoHintText=it.getString(R.styleable.Payview_cardNoHintText).let { s-> s?.toString()
+                    ?: cardNoHintText }
+                cardMonthHintText=it.getString(R.styleable.Payview_cardMonthHintText).let { s-> s?.toString()
+                    ?: cardMonthHintText }
+                cardYearHintText=it.getString(R.styleable.Payview_cardYearHintText).let { s-> s?.toString()
+                    ?: cardYearHintText }
+                cardCvHintText=it.getString(R.styleable.Payview_cardCvHintText).let { s-> s?.toString()
+                    ?: cardCvHintText }
                 cardAnimationType=it.getInt(R.styleable.Payview_cardAnimationType,AnimationType.HORIZONTAL)
                 initViews()
                 initData()
@@ -219,6 +237,14 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
         tev_card_year.textSize = cardYearTextSize.toFloat()
         tev_card_month.textSize = cardMonthTextSize.toFloat()
         tev_card_cv.textSize = cardCvTextSize.toFloat()
+        btn_pay.text = cardBtnPayText
+
+        // Custom Hint Text
+        til_card_name.hint = cardNameHintText
+        til_card_no.hint = cardNoHintText
+        til_card_month.hint = cardMonthHintText
+        til_card_year.hint = cardYearHintText
+        til_card_cv.hint = cardCvHintText
 
         tev_card_name.onFocusChangeListener = this
         tev_card_no.onFocusChangeListener = this
