@@ -3,4 +3,9 @@
     <style name="HelperStyle">
         <item name="android:textColor">@android:color/black</item>
     </style>
+
+    <style name="CounterText" parent="TextAppearance.Design.Counter">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+    </style>
 </resources>
