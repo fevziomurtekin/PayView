@@ -520,7 +520,7 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
                     && tev_card_cv.text.toString().length==3
                     && tev_card_month.text.toString().length==2
                     && tev_card_year.text.toString().length==2
-                    && tev_card_no.text?.toString()?.replace(" ","")?.length==16){
+                    && tev_card_no.text?.toString()?.replace(" ","")?.length in 14..16){
 
                 /** card month/card year compare to now date.*/
                 val nowMonth = Calendar.getInstance().get(Calendar.MONTH)
@@ -534,34 +534,50 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
                 }else true
             }
             else{
-                if(tev_card_name.text.isNullOrEmpty())
+                var valid = true
+                if(tev_card_name.text.isNullOrEmpty()) {
                     tev_card_name.error = cardNameHelperText
-                if(tev_card_no.text?.toString()?.replace(" ","")?.length!=16)
+                    valid = false
+                }
+                if(tev_card_no.text?.toString()?.replace(" ","")?.length!=16) {
                     tev_card_no.error = cardNoHelperText
+                    valid = false
+                }
                 if(tev_card_cv.text.isNullOrEmpty()
-                        || tev_card_cv.text.toString().length!=3)
+                        || tev_card_cv.text.toString().length!=3) {
                     tev_card_cv.error = cardCvErrorText
+                    valid = false
+                }
 
 
                 if(tev_card_year.text.isNullOrEmpty()
                         || tev_card_year.text.toString().length!=2
-                        || tev_card_year.text.toString().toInt()>99)
+                        || tev_card_year.text.toString().toInt()>99) {
                     tev_card_year.error = cardYearErrorText
+                    valid = false
+                }
                 if(tev_card_month.text.isNullOrEmpty()
                         || tev_card_month.text.toString().length!=2
-                        || tev_card_month.text.toString().toInt()<12)
+                        || tev_card_month.text.toString().toInt()<12) {
                     tev_card_month.error = cardMonthErrorText
-
-                /** card month/card year compare to now date.*/
-                val nowMonth = Calendar.getInstance().get(Calendar.MONTH)
-                val nowYear = Calendar.getInstance().get(Calendar.YEAR).toString().substring(2,4).toInt()
-                if(nowYear>tev_card_year.text.toString().toInt()
-                        || (nowYear==tev_card_year.text.toString().toInt()
-                                && nowMonth>=tev_card_month.text.toString().toInt())){
-                    tev_card_year.error = cardExpiredError
-                    tev_card_month.error = cardExpiredError
+                    valid = false
                 }
-                return false
+
+                if (valid) {
+                    /** card month/card year compare to now date.*/
+                    val nowMonth = Calendar.getInstance().get(Calendar.MONTH)
+                    val nowYear =
+                        Calendar.getInstance().get(Calendar.YEAR).toString().substring(2, 4).toInt()
+                    if (nowYear > tev_card_year.text.toString().toInt()
+                        || (nowYear == tev_card_year.text.toString().toInt()
+                                && nowMonth >= tev_card_month.text.toString().toInt())
+                    ) {
+                        tev_card_year.error = cardExpiredError
+                        tev_card_month.error = cardExpiredError
+                        valid = false
+                    }
+                }
+                return valid
             }
         }
     }
