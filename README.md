@@ -1,5 +1,5 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6af0386ba9e24da7ad94a12e38cd3268)](https://app.codacy.com/app/fevziomurtekin/PayView?utm_source=github.com&utm_medium=referral&utm_content=fevziomurtekin/PayView&utm_campaign=Badge_Grade_Dashboard)
-[![](https://jitpack.io/v/fevziomurtekin/PayView.svg)](https://jitpack.io/#fevziomurtekin/PayView) ![Min SDK](https://img.shields.io/badge/minSdkVersion-21-yellowgreen) [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-PayView-green.svg?style=flat )]( https://android-arsenal.com/details/1/7724 )![Twitter Follow](https://img.shields.io/twitter/follow/fevziomurtekin.svg?label=fevziomurtekin&style=social)
+[![](https://jitpack.io/v/fevziomurtekin/PayView.svg)](https://jitpack.io/#fevziomurtekin/PayView) ![Min SDK](https://img.shields.io/badge/minSdkVersion-21-yellowgreen) [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-PayView-green.svg?style=flat )]( https://android-arsenal.com/details/1/7724 ) ![Twitter Follow](https://img.shields.io/twitter/follow/fevziomurtekin.svg?label=fevziomurtekin&style=social)
 
 
 <p align="center">
