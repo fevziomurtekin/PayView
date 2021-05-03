@@ -19,6 +19,12 @@
             <enum name="horizontal" value="0" />
             <enum name="vertical" value="1" />
         </attr>
+        <attr name="cardBtnPayText" format="string" />
+        <attr name="cardNameHintText" format="string" />
+        <attr name="cardNoHintText" format="string" />
+        <attr name="cardMonthHintText" format="string" />
+        <attr name="cardYearHintText" format="string" />
+        <attr name="cardCvHintText" format="string" />
 
     </declare-styleable>
 

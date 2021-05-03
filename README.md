@@ -41,26 +41,32 @@ dependencies {
 ## Layout
 
 ```xml
- <com.fevziomurtekin.payview.Payview
-        android:id="@+id/payview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardBgColor="@android:color/holo_blue_light"
-        app:cardFgColor="@android:color/white"
-        app:cardTextColor="@color/black"
-        app:cardNameHelperText="Enter to card name. Max 25 characters."
-        app:cardCvTextSize="14"
-        app:cardNoTextSize="14"
-        app:cardNumberHelperText="You must enter your 16-digit card number."
-        app:cardYearTextSize="13"
-        app:cardNameTextSize="15"
-        app:cardMonthTextSize="13"
-        app:cardAnimationType="vertical"
-        app:cardCvErrorText="You must enter 3-digit characters"
-        app:cardMonthErrorText="You must enter 2-digit characters and you'll enter to number the most digit-value is '12'"
-        app:cardYearErrorText="You must enter 2-digit characters and you'll enter to number the most digit-value is '99'"
-        app:cardExpiredErrorText="Your card has expired. Please enter the usage date correctly."
-    />
+  <com.fevziomurtekin.payview.Payview
+         android:id="@+id/payview"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         app:cardBgColor="@android:color/holo_blue_light"
+         app:cardFgColor="@android:color/white"
+         app:cardTextColor="@color/black"
+         app:cardNameHelperText="Enter to card name. Max 25 characters."
+         app:cardCvTextSize="14"
+         app:cardNoTextSize="14"
+         app:cardNumberHelperText="You must enter your 16-digit card number."
+         app:cardYearTextSize="13"
+         app:cardNameTextSize="15"
+         app:cardMonthTextSize="13"
+         app:cardAnimationType="vertical"
+         app:cardBtnPayText="Proceed to pay"
+         app:cardNameHintText="Name on card"
+         app:cardNoHintText="Card Number"
+         app:cardMonthHintText="MM"
+         app:cardYearHintText="YY"
+         app:cardCvHintText="CVV"
+         app:cardCvErrorText="You must enter 3-digit characters"
+         app:cardMonthErrorText="You must enter 2-digit characters and you'll enter to number the most digit-value is '12'"
+         app:cardYearErrorText="You must enter 2-digit characters and you'll enter to number the most digit-value is '99'"
+         app:cardExpiredErrorText="Your card has expired. Please enter the usage date correctly."
+     />
 ```
 
 ## Listeners
@@ -101,6 +107,12 @@ dependencies {
 |`cardMonthErrorText`|Default text ""You must enter 2-digit characters and you'll enter to number the most digit-value is '12'"|
 |`cardYearErrorText`| Default text "You must enter 2-digit characters and you'll enter to number the most digit-value is '99'"|
 |`cardExpiredErrorText`| Default text "Your card has expired. Please enter the usage date correctly."|
+|`cardBtnPayText`| Default text "Pay"|
+|`cardNameHintText`| Default text "Card Name"|
+|`cardNoHintText`| Default text "Card No"|
+|`cardMonthHintText`| Default text "Month"|
+|`cardYearHintText`| Default text "Year"|
+|`cardCvHintText`| Default text "Cv Code"|
 
 
 ## License

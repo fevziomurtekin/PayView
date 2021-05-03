@@ -50,6 +50,12 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
     private var cardYearTextSize : Int = 13
     private var cardMonthTextSize : Int = 13
     private var cardCvTextSize : Int = 14
+    private var cardBtnPayText : String = resources.getString(R.string.pay)
+    private var cardNameHintText : String = resources.getString(R.string.cardname)
+    private var cardNoHintText : String = resources.getString(R.string.cardno)
+    private var cardMonthHintText : String = resources.getString(R.string.cardmonth)
+    private var cardYearHintText : String = resources.getString(R.string.cardyear)
+    private var cardCvHintText : String = resources.getString(R.string.cardcv)
 
 
     /** Views on layout.*/
@@ -141,6 +147,18 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
                 cardYearTextSize=it.getInt(R.styleable.Payview_cardYearTextSize,13)
                 cardMonthTextSize=it.getInt(R.styleable.Payview_cardMonthTextSize,13)
                 cardCvTextSize=it.getInt(R.styleable.Payview_cardCvTextSize,14)
+                cardBtnPayText=it.getString(R.styleable.Payview_cardBtnPayText).let { s-> s?.toString()
+                    ?: cardBtnPayText }
+                cardNameHintText=it.getString(R.styleable.Payview_cardNameHintText).let { s-> s?.toString()
+                    ?: cardNameHintText }
+                cardNoHintText=it.getString(R.styleable.Payview_cardNoHintText).let { s-> s?.toString()
+                    ?: cardNoHintText }
+                cardMonthHintText=it.getString(R.styleable.Payview_cardMonthHintText).let { s-> s?.toString()
+                    ?: cardMonthHintText }
+                cardYearHintText=it.getString(R.styleable.Payview_cardYearHintText).let { s-> s?.toString()
+                    ?: cardYearHintText }
+                cardCvHintText=it.getString(R.styleable.Payview_cardCvHintText).let { s-> s?.toString()
+                    ?: cardCvHintText }
                 cardAnimationType=it.getInt(R.styleable.Payview_cardAnimationType,AnimationType.HORIZONTAL)
                 initViews()
                 initData()
@@ -219,6 +237,14 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
         tev_card_year.textSize = cardYearTextSize.toFloat()
         tev_card_month.textSize = cardMonthTextSize.toFloat()
         tev_card_cv.textSize = cardCvTextSize.toFloat()
+        btn_pay.text = cardBtnPayText
+
+        // Custom Hint Text
+        til_card_name.hint = cardNameHintText
+        til_card_no.hint = cardNoHintText
+        til_card_month.hint = cardMonthHintText
+        til_card_year.hint = cardYearHintText
+        til_card_cv.hint = cardCvHintText
 
         tev_card_name.onFocusChangeListener = this
         tev_card_no.onFocusChangeListener = this
@@ -494,7 +520,7 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
                     && tev_card_cv.text.toString().length==3
                     && tev_card_month.text.toString().length==2
                     && tev_card_year.text.toString().length==2
-                    && tev_card_no.text?.toString()?.replace(" ","")?.length==16){
+                    && tev_card_no.text?.toString()?.replace(" ","")?.length in 14..16){
 
                 /** card month/card year compare to now date.*/
                 val nowMonth = Calendar.getInstance().get(Calendar.MONTH)
@@ -508,34 +534,50 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
                 }else true
             }
             else{
-                if(tev_card_name.text.isNullOrEmpty())
+                var valid = true
+                if(tev_card_name.text.isNullOrEmpty()) {
                     tev_card_name.error = cardNameHelperText
-                if(tev_card_no.text?.toString()?.replace(" ","")?.length!=16)
+                    valid = false
+                }
+                if(tev_card_no.text?.toString()?.replace(" ","")?.length!=16) {
                     tev_card_no.error = cardNoHelperText
+                    valid = false
+                }
                 if(tev_card_cv.text.isNullOrEmpty()
-                        || tev_card_cv.text.toString().length!=3)
+                        || tev_card_cv.text.toString().length!=3) {
                     tev_card_cv.error = cardCvErrorText
+                    valid = false
+                }
 
 
                 if(tev_card_year.text.isNullOrEmpty()
                         || tev_card_year.text.toString().length!=2
-                        || tev_card_year.text.toString().toInt()>99)
+                        || tev_card_year.text.toString().toInt()>99) {
                     tev_card_year.error = cardYearErrorText
+                    valid = false
+                }
                 if(tev_card_month.text.isNullOrEmpty()
                         || tev_card_month.text.toString().length!=2
-                        || tev_card_month.text.toString().toInt()<12)
+                        || tev_card_month.text.toString().toInt()<12) {
                     tev_card_month.error = cardMonthErrorText
-
-                /** card month/card year compare to now date.*/
-                val nowMonth = Calendar.getInstance().get(Calendar.MONTH)
-                val nowYear = Calendar.getInstance().get(Calendar.YEAR).toString().substring(2,4).toInt()
-                if(nowYear>tev_card_year.text.toString().toInt()
-                        || (nowYear==tev_card_year.text.toString().toInt()
-                                && nowMonth>=tev_card_month.text.toString().toInt())){
-                    tev_card_year.error = cardExpiredError
-                    tev_card_month.error = cardExpiredError
+                    valid = false
                 }
-                return false
+
+                if (valid) {
+                    /** card month/card year compare to now date.*/
+                    val nowMonth = Calendar.getInstance().get(Calendar.MONTH)
+                    val nowYear =
+                        Calendar.getInstance().get(Calendar.YEAR).toString().substring(2, 4).toInt()
+                    if (nowYear > tev_card_year.text.toString().toInt()
+                        || (nowYear == tev_card_year.text.toString().toInt()
+                                && nowMonth >= tev_card_month.text.toString().toInt())
+                    ) {
+                        tev_card_year.error = cardExpiredError
+                        tev_card_month.error = cardExpiredError
+                        valid = false
+                    }
+                }
+                return valid
             }
         }
     }
