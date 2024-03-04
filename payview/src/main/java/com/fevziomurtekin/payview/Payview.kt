@@ -156,6 +156,10 @@ class Payview : NestedScrollView, View.OnFocusChangeListener {
     fun setPayOnclickListener(onClickListener: OnClickListener){
         btn_pay.setOnClickListener(onClickListener)
     }
+    
+    fun setPayText(text: String) {
+        btn_pay.text = text
+    }
 
     /**
      * attributes init to components.
